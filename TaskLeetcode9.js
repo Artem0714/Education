@@ -73,3 +73,9 @@ console.log (isPalindrome(1232321))*/
 }
 
 console.log (isPalindrome(112585211));*/
+
+for (let i = 0; i < 10; i++) {
+    if (i % 2 == 0){
+        alert (i)
+    }
+}
