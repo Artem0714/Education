@@ -85,8 +85,9 @@ for (let j = 0; j < mas.length; j += 1) {
 }*/
 
 
+// РЕШЕНИЕ ЧЕРЕЗ 2ой ЦИКЛ
 
-roman = 'XVII'
+/*roman = 'XVII'
 
 let romanToInt = function(s) {
     const symbol = ['I', 'V', 'X', 'L', 'C', 'D', 'M'];
@@ -108,6 +109,46 @@ let romanToInt = function(s) {
     }
     return (GoGo.map(i=>x+=i, x=0).reverse()[0])//нашел это решение загуглив, красиво 
     // выглядит но пока не шибко понимаю как это работает(я так понимаю это замена обычному циклу)
+}
+
+alert (romanToInt(roman))*/
+
+
+//РЕШЕНИЕ С ПОМОЩЬЮ МЕТОДОВ
+
+roman = 'XVII'
+
+let romanToInt = function(s) {
+    const symbol = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000
+    }
+
+    let NumOfArr = Array.from(String(s), String);
+
+    let GoGo = new Array ();
+
+    for (let j = 0; j < s.length; j += 1) {
+        for (let key in symbol) {
+            if (key == NumOfArr[j]) {
+                GoGo.push (symbol[key]);
+            }
+        }
+    }
+
+    for (let k = 0; k < GoGo.length; k += 1) {
+        if (GoGo[k] < GoGo[k+1]) {
+            GoGo[k+1] = GoGo[k+1] - GoGo[k]
+            GoGo.splice(k,1);
+        }
+    }
+
+    return (GoGo.map(i=>x+=i, x=0).reverse()[0]);
 }
 
 alert (romanToInt(roman))

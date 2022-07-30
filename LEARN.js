@@ -81,3 +81,12 @@ multiplyNumeric(menu)*/
   alert(user.name); // Вася
   alert(user.isAdmin); // false
 */
+/*________________
+
+//Objects
+
+let obj = {};
+name.obj = 'John';
+surname.obj = 'Smith';
+name.obj = 'Pete';
+alert ( name.obj )*/
