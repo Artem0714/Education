@@ -50,7 +50,7 @@ function longestCommonPrefix(strs) {
         }
     }
 
-    console.log (result)
+    return result
 }
 
 longestCommonPrefix(strs)
